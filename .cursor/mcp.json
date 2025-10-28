@@ -1,0 +1,7 @@
+{
+    "mcpServers": {
+        "supabase": {
+            "url": "http://mcp.supabase.com/mcp"
+        }
+    }
+}
