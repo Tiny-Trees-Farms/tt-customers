@@ -3,8 +3,17 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 export default function OrderConfirmationPage() {
+  return (
+    <Suspense fallback={null}>
+      <OrderConfirmationContent />
+    </Suspense>
+  );
+}
+
+function OrderConfirmationContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -80,5 +89,3 @@ export default function OrderConfirmationPage() {
     </div>
   );
 }
-
-
