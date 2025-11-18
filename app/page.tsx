@@ -29,6 +29,7 @@ export default function Home() {
       process.env.NEXT_PUBLIC_HOUSTON_PASSWORD,
       process.env.NEXT_PUBLIC_HOUSTON2_PASSWORD,
       process.env.NEXT_PUBLIC_HOUSTON3_PASSWORD,
+      process.env.NEXT_PUBLIC_HOUSTON4_PASSWORD,
     ].filter(Boolean) as string[];
 
     const parsed = passwordSchema.safeParse({ password });

@@ -41,7 +41,7 @@ export default function Menu() {
           <p className="font-semibold">- CASH ONLY -</p>
         </div>
         <div className="rounded-lg p-4 space-y-2 text-sm">
-          <Button size="lg" onClick={() => router.push("/order")} className="w-full font-semibold text-lg bg-green-700 hover:bg-green-800">
+          <Button size="lg" onClick={() => window.open("https://tinytrees.typeform.com/to/ahWjmRu8?typeform-source=www.tinytreesfarm.com", "_blank")} className="w-full font-semibold text-lg bg-green-700 hover:bg-green-800">
             Place Order
           </Button>
         </div>
