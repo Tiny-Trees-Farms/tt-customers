@@ -8,10 +8,12 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { z } from "zod";
 import { useAuthStore } from "@/lib/store/auth";
+import { Eye, EyeOff } from "lucide-react";
 
 export default function Home() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
   const login = useAuthStore((s) => s.login);
 
@@ -60,16 +62,26 @@ export default function Home() {
         {/* <h1 className="text-4xl font-semibold mb-8">Welcome!</h1> */}
         <div className="mb-6">
           <Label htmlFor="password" className="block text-sm font-medium text-white">Password</Label>
-          <Input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-              if (error) setError(null);
-            }}
-            className={`mt-2 ${error ? "border-red-500 focus-visible:ring-red-500" : ""}`}
-          />
+          <div className="relative mt-2">
+            <Input
+              type={showPassword ? "text" : "password"}
+              id="password"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+                if (error) setError(null);
+              }}
+              className={`pr-10 ${error ? "border-red-500 focus-visible:ring-red-500" : ""}`}
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+              aria-label={showPassword ? "Hide password" : "Show password"}
+            >
+              {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+            </button>
+          </div>
           {error && (
             <p className="mt-2 text-sm text-red-500">Invalid password</p>
           )}
