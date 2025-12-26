@@ -73,11 +73,6 @@ export default function Menu() {
           })()}
         </div>
       </div>
-
-      {/* <FlowerMenu /> */}
-      
-      {/* Footer spacing */}
-      <div className="mt-8"></div>
     </div>
   );
 }
