@@ -59,7 +59,7 @@ export default function Home() {
         <div className="mb-6">
           <Image src="/TT_logo.png" alt="logo" width={115} height={115} />
         </div>
-        {/* <h1 className="text-4xl font-semibold mb-8">Welcome!</h1> */}
+        <h1 className="text-4xl font-semibold mb-8 text-center">Welcome!</h1>
         <div className="mb-6">
           <Label htmlFor="password" className="block text-sm font-medium text-white">Password</Label>
           <div className="relative mt-2">
