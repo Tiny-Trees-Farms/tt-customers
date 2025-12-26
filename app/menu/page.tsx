@@ -58,7 +58,7 @@ export default function Menu() {
             const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
             const menuSrc = supabaseUrl
               ? `${supabaseUrl}/storage/v1/object/public/menus/current_menu.png`
-              : "/oct_atx4.png";
+              : "/current_menu.png";
             return (
               <Image
                 src={menuSrc}
