@@ -95,6 +95,22 @@ export default function Menu() {
     return null;
   }
 
+  if (isLoading) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen bg-black">
+        <Image
+          src="/TT_logo.png"
+          alt="Tiny Trees Logo"
+          width={200}
+          height={200}
+          className="mb-8"
+          priority
+        />
+        <div className="animate-spin rounded-full h-10 w-10 border-4 border-white border-t-transparent" />
+      </div>
+    );
+  }
+
   return (
     <div 
       className="flex flex-col items-center justify-center min-h-screen text-white relative p-4 md:p-8"
@@ -120,7 +136,7 @@ export default function Menu() {
           <p className="font-semibold">{infoText.paymentMethod}</p>
         </div>
         <div className="rounded-lg p-4 space-y-2 text-sm">
-          <Button size="lg" onClick={() => window.open('https://tinytrees.typeform.com/to/ahWjmRu8', '_blank')} className="w-full bg-white text-black">
+          <Button size="lg" onClick={() => window.open('https://tinytrees.typeform.com/to/ahWjmRu8', '_blank')} className="w-full bg-white text-black hover:bg-emerald-600">
             Place Order
           </Button>
         </div>
